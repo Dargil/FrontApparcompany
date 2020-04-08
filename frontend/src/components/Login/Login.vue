@@ -57,7 +57,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      console.log("1", this.username);
+      console.log("1", this.form.username);
       console.log("2", this.password);
       const path = "http://localhost:8000/rest-auth/login/";
       console.log("1", this.bookId);
@@ -67,7 +67,7 @@ export default {
           console.log("respuestas", response);
           this.token = response.data.key;
           console.log("token", this.token);
-          location.href = "/Evento/eventos";
+           this.$router.push({ name: "Evento", params: { token: this.token, username:this.form.username } });
         })
         .catch(error => {
           swal("Usuario o contraseña Incorrectos", "", "error");
