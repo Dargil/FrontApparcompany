@@ -24,21 +24,14 @@
 
 
               <div class="form-group row">
-                  <label for="nombre" class="col-sm-2 col-form-label">Nombres</label>
+                  <label for="nombre" class="col-sm-2 col-form-label">Nombre Empresa</label>
                 <div class="col-sm-6">
                   <input type="test" placeholder="Nombre" name="nombre" class="form-control" v-model.trim="form.first_name">
                </div>
                </div>
 
-              <div class="form-group row">
-                  <label for="last_name" class="col-sm-2 col-form-label">Apellidos</label>
-                <div class="col-sm-6">
-                  <input type="test" placeholder="Apellidos" name="last_name" class="form-control" v-model.trim="form.last_name">
-               </div>
-               </div>
-
                  <div class="form-group row">
-<label for="email" class="col-sm-2 col-form-label">Correo</label>
+                  <label for="email" class="col-sm-2 col-form-label">Correo</label>
                 <div class="col-sm-6">
                   <input type="test" placeholder="Correo" name="email" class="form-control" v-model.trim="form.email">
                </div>
@@ -128,7 +121,7 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       console.log("alv");
-      const path = "http://localhost:8000/users/";
+      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/users/";
       axios.post(path, this.form)
         .then(response => {
         this.form.description = response.data.description;

@@ -8,15 +8,14 @@ import DeleteBook from '@/components/Book/DeleteBook'
 import Login from '@/components/Login/Login'
 import NewUser from '@/components/Login/NewUser'
 import Evento from '@/components/Evento/Evento'
+import NewEvento from '@/components/Evento/NewEvento'
+import DeleteEvento from '@/components/Evento/DeleteEvento'
+import EditEvento from '@/components/Evento/EditEvento'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
     {
       path: '/Books',
       name: 'ListBook',
@@ -32,13 +31,24 @@ export default new Router({
       name: 'DeleteBook',
       component: DeleteBook
     },
+    ,
+    {
+      path: '/Evento/:eventoId/edit',
+      name: 'EditEvento',
+      component: EditEvento
+    },
+    {
+      path: '/Evento/:eventoId/delete',
+      name: 'DeleteEvento',
+      component: DeleteEvento
+    },
     {
       path: '/Books/new',
       name: 'NewBook',
       component: NewBook
     },
     {
-      path: '/Login/login',
+      path: '/',
       name: 'Login',
       component: Login
     },
@@ -52,7 +62,12 @@ export default new Router({
       name: 'Evento',
       component: Evento,
       props: true
-    }
+    },
+    {
+      path: '/Evento/NewEvento',
+      name: 'NewEvento',
+      component: NewEvento
+    },
 
 
   ],

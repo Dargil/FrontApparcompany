@@ -4,7 +4,7 @@
       <div class="col text-left">
         <div>
         <h2>Listado de Eventos</h2>
-        <b-button size="sm" :to="{name:'NewBook'}" variant="primary">
+        <b-button size="sm" :to="{name:'NewEvento'}" variant="primary">
         Nuevo Evento
         </b-button>
         </div>
@@ -13,10 +13,10 @@
           <b-table striped hover :items="eventos":fields="fields">
 
               <template v-slot:cell(action)="data">
-              <b-button size="sm" variant="primary" :to="{name:'EditBook',params: {bookId: data.item.id}}">
+              <b-button size="sm" variant="primary" :to="{name:'EditEvento',params: {eventoId: data.item.id}}">
               Editar
               </b-button>
-             <b-button size="sm" variant="danger" :to="{name:'DeleteBook',params: {bookId: data.item.id}}">
+             <b-button size="sm" variant="danger" :to="{name:'DeleteEvento',params: {eventoId: data.item.id}}">
               Eliminar
             </b-button>
            </template>
@@ -53,12 +53,9 @@ export default {
   },
   methods: {
     getEventos() {
-      const path = "http://localhost:8000/evento/";
-      axios
-        .get(path)
-        .then(response => {
+      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/evento/";
+      axios.get(path).then(response => {
           this.eventos = response.data;
-
         })
         .catch(error => {
           console.log(error);

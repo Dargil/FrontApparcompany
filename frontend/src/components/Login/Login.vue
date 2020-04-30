@@ -59,7 +59,7 @@ export default {
       evt.preventDefault();
       console.log("1", this.form.username);
       console.log("2", this.password);
-      const path = "http://localhost:8000/rest-auth/login/";
+      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/rest-auth/login/";
       console.log("1", this.bookId);
       axios
         .post(path, this.form)
