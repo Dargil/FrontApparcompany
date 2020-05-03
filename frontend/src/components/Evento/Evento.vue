@@ -4,7 +4,7 @@
       <div class="col text-left">
         <div>
         <h2>Listado de Eventos</h2>
-        <b-button size="sm" :to="{name:'NewEvento'}" variant="primary">
+        <b-button type="submit" v-on:click="newEvento" variant="primary">
         Nuevo Evento
         </b-button>
         </div>
@@ -52,8 +52,11 @@ export default {
     };
   },
   methods: {
+    newEvento(){
+      this.$router.push({ name: "NewEvento", params: { token: this.token, username:this.username } });
+    },
     getEventos() {
-      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/evento/";
+      const path = this.$hostname+"/evento/";
       axios.get(path).then(response => {
           this.eventos = response.data;
         })

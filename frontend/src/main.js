@@ -7,6 +7,11 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+Vue.prototype.$hostname = 'http://localhost:8000'
+Vue.prototype.$s3_hots = 'https://apparchar.s3.amazonaws.com/evento/'
+
+Vue.prototype.$username_g = 'username'
+Vue.prototype.$token_g = 'token'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

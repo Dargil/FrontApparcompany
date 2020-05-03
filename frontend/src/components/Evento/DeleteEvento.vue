@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     getBook() {
-      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/books/" + this.bookId + "/";
+      const path = this.$hostname+"/books/" + this.bookId + "/";
       console.log("1", this.bookId);
       axios
         .get(path)
@@ -50,7 +50,7 @@ export default {
         });
     },
     deleteBook() {
-      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/books/" + this.bookId + "/";
+      const path = this.$hostname+"/books/" + this.bookId + "/";
       axios
         .delete(path)
         .then(response => {

@@ -110,7 +110,7 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/books/";
+      const path = this.$hostname+"/books/";
       axios
         .post(path, this.form)
         .then(response => {
@@ -123,7 +123,7 @@ export default {
         });
     },
     getCategorias(){
-        const path='http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/categoria/';
+        const path=this.$hostname+'/categoria/';
         axios.get(path).then(response => {
             var i;
             for (i = 0; i < response.data.length; i++) {

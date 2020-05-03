@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import NewBook from '@/components/Book/NewBook'
 import ListBook from '@/components/Book/ListBook'
 import EditBook from '@/components/Book/EditBook'
@@ -11,11 +10,17 @@ import Evento from '@/components/Evento/Evento'
 import NewEvento from '@/components/Evento/NewEvento'
 import DeleteEvento from '@/components/Evento/DeleteEvento'
 import EditEvento from '@/components/Evento/EditEvento'
+import upload from '@/components/Evento/uploadFile'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/upload',
+      name: 'upload',
+      component: upload
+    },
     {
       path: '/Books',
       name: 'ListBook',
@@ -66,7 +71,8 @@ export default new Router({
     {
       path: '/Evento/NewEvento',
       name: 'NewEvento',
-      component: NewEvento
+      component: NewEvento,
+      props: true
     },
 
 

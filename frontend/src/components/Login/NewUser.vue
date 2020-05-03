@@ -120,19 +120,19 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      console.log("alv");
-      const path = "http://ec2-54-161-138-190.compute-1.amazonaws.com:8080/users/";
+      const path = this.$hostname+"/users/";
       axios.post(path, this.form)
         .then(response => {
-        this.form.description = response.data.description;
-        this.form.NIT=response.data.NIT;
-        this.form.first_name=response.data.first_name;
-        this.form.last_name=response.data.last_name;
-        this.form.email=response.data.email;
-        this.form.direccion=response.data.direccion;
-        this.form.telefono=response.data.telefono;
-        this.form.username=response.data.username;
-        this.form.password=response.data.password;
+        this.form.description = '';
+        this.form.NIT='';
+        this.form.first_name='';
+        this.form.last_name='';
+        this.form.email='';
+        this.form.direccion='';
+        this.form.telefono='';
+        this.form.username='';
+        this.form.password='';
+        this.form.password2='';
         swal("Se ha registrado exitosamente", "", "success");
         console.log(response);
         })
@@ -143,9 +143,6 @@ export default {
     }
   },
   created() {}
-
-
-
 };
 
 
