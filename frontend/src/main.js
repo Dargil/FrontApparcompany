@@ -6,8 +6,8 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-
-Vue.prototype.$hostname = 'http://localhost:8000'
+/* http://localhost:8000 */
+Vue.prototype.$hostname = 'http://ec2-3-84-221-67.compute-1.amazonaws.com:8080'
 Vue.prototype.$s3_hots = 'https://apparchar.s3.amazonaws.com/evento/'
 
 Vue.prototype.$username_g = 'username'
